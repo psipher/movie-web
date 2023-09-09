@@ -8,26 +8,26 @@ const a11yOff = Object.keys(require("eslint-plugin-jsx-a11y").rules).reduce(
 
 module.exports = {
   env: {
-    browser: true,
+    browser: true
   },
   extends: [
     "airbnb",
     "airbnb/hooks",
     "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
+    "plugin:prettier/recommended"
   ],
-  ignorePatterns: ["public/*", "dist/*", "/*.js", "/*.ts"],
+  ignorePatterns: ["public/*", "dist/*", "/*.js", "/*.ts", "/plugins/*.ts"],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     project: "./tsconfig.json",
-    tsconfigRootDir: "./",
+    tsconfigRootDir: "./"
   },
   settings: {
     "import/resolver": {
       typescript: {
-        project: "./tsconfig.json",
-      },
-    },
+        project: "./tsconfig.json"
+      }
+    }
   },
   plugins: ["@typescript-eslint", "import", "prettier"],
   rules: {
@@ -52,18 +52,19 @@ module.exports = {
     "no-await-in-loop": "off",
     "no-nested-ternary": "off",
     "prefer-destructuring": "off",
+    "no-param-reassign": "off",
     "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
     "react/jsx-filename-extension": [
       "error",
-      { extensions: [".js", ".tsx", ".jsx"] },
+      { extensions: [".js", ".tsx", ".jsx"] }
     ],
     "import/extensions": [
       "error",
       "ignorePackages",
       {
         ts: "never",
-        tsx: "never",
-      },
+        tsx: "never"
+      }
     ],
     "import/order": [
       "error",
@@ -74,14 +75,14 @@ module.exports = {
           "internal",
           ["sibling", "parent"],
           "index",
-          "unknown",
+          "unknown"
         ],
         "newlines-between": "always",
         alphabetize: {
           order: "asc",
-          caseInsensitive: true,
-        },
-      },
+          caseInsensitive: true
+        }
+      }
     ],
     "sort-imports": [
       "error",
@@ -90,9 +91,9 @@ module.exports = {
         ignoreDeclarationSort: true,
         ignoreMemberSort: false,
         memberSyntaxSortOrder: ["none", "all", "multiple", "single"],
-        allowSeparatedGroups: true,
-      },
+        allowSeparatedGroups: true
+      }
     ],
-    ...a11yOff,
-  },
+    ...a11yOff
+  }
 };

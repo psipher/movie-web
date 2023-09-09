@@ -1,15 +1,16 @@
 {
   "name": "movie-web",
-  "version": "3.2.1",
+  "version": "4.0.0",
   "private": true,
   "homepage": "https://movie-web.app",
   "dependencies": {
-    "@formkit/auto-animate": "^1.0.0-beta.5",
+    "@formkit/auto-animate": "^0.7.0",
     "@headlessui/react": "^1.5.0",
     "@react-spring/web": "^9.7.1",
     "@sentry/integrations": "^7.49.0",
     "@sentry/react": "^7.49.0",
     "@use-gesture/react": "^10.2.24",
+    "classnames": "^2.3.2",
     "core-js": "^3.29.1",
     "crypto-js": "^4.1.1",
     "dompurify": "^3.0.1",
@@ -18,6 +19,7 @@
     "hls.js": "^1.0.7",
     "i18next": "^22.4.5",
     "i18next-browser-languagedetector": "^7.0.1",
+    "immer": "^10.0.2",
     "json5": "^2.2.0",
     "lodash.throttle": "^4.1.1",
     "nanoid": "^4.0.0",
@@ -32,8 +34,10 @@
     "react-stickynode": "^4.1.0",
     "react-transition-group": "^4.4.5",
     "react-use": "^17.4.0",
+    "slugify": "^1.6.6",
     "subsrt-ts": "^2.1.1",
-    "unpacker": "^1.0.1"
+    "unpacker": "^1.0.1",
+    "zustand": "^4.3.9"
   },
   "scripts": {
     "dev": "vite",
@@ -42,7 +46,8 @@
     "preview": "vite preview",
     "lint": "eslint --ext .tsx,.ts src",
     "lint:fix": "eslint --fix --ext .tsx,.ts src",
-    "lint:report": "eslint --ext .tsx,.ts --output-file eslint_report.json --format json src"
+    "lint:report": "eslint --ext .tsx,.ts --output-file eslint_report.json --format json src",
+    "preinstall": "npx -y only-allow pnpm"
   },
   "browserslist": {
     "production": [
@@ -59,7 +64,6 @@
     "@babel/core": "^7.21.3",
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-typescript": "^7.21.0",
-    "@tailwindcss/line-clamp": "^0.4.2",
     "@types/chromecast-caf-sender": "^1.0.5",
     "@types/crypto-js": "^4.1.1",
     "@types/dompurify": "^2.4.0",
@@ -87,17 +91,21 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "7.29.4",
     "eslint-plugin-react-hooks": "4.3.0",
+    "glob": "^10.3.3",
+    "handlebars": "^4.7.7",
     "jsdom": "^21.1.0",
     "postcss": "^8.4.20",
     "prettier": "^2.5.1",
     "prettier-plugin-tailwindcss": "^0.1.7",
     "tailwind-scrollbar": "^2.0.1",
     "tailwindcss": "^3.2.4",
+    "tailwindcss-themer": "^3.1.0",
     "typescript": "^4.6.4",
     "vite": "^4.0.1",
     "vite-plugin-checker": "^0.5.6",
     "vite-plugin-package-version": "^1.0.2",
     "vite-plugin-pwa": "^0.14.4",
+    "vite-plugin-static-copy": "^0.16.0",
     "vitest": "^0.28.5",
     "workbox-build": "^6.5.4",
     "workbox-window": "^6.5.4"
